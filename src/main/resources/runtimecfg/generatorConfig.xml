@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
-  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	
-  	<context id="MySQLTables" targetRuntime="MyBatis3">
-  
-		<!-- MySQL数据库链接URL、用户名、密码 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
-			connectionURL="jdbc:mysql://192.168.0.90:3306/zhongchou" 
-			userId="root" 
-			password="qMI9hr82Q">
-		</jdbcConnection>
-		
-		<!-- 是否去除自动生成的注释true:是 false:否 -->
-		<!--
-		<commentGenerator>
-			<property name="suppressAllComments" value="true" />
-		</commentGenerator>
-		-->
-	
-	    <javaTypeResolver>
-			<property name="forceBigDecimals" value="false" />
-	    </javaTypeResolver>
-		
-		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.zhongxin.core.entity" targetProject="F:\src">
-			<property name="enableSubPackages" value="false" />
-			<property name="trimStrings" value="false" />
-		</javaModelGenerator>
-		
-		<!-- 生成的映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="mybatis.mapper" targetProject="F:\src">
-			<property name="enableSubPackages" value="false" />
-		</sqlMapGenerator>
-		
-		<!-- 生成DAO的包名和位置 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.zhongxin.core.dao" targetProject="F:\src">
-			<property name="enableSubPackages" value="false" />
-		</javaClientGenerator>
-		
-		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-		
-	    <table tableName="zc_feedback" domainObjectName="FedbackEntity" enableCountByExample="false" 
-	    	enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
-			<property name="useActualColumnNames" value="true"/>
-		</table>
-  	</context>
-	
+
+    <context id="MySQLTables" targetRuntime="MyBatis3">
+
+        <!--忽略getter/setter方法-->
+        <plugin type="com.generator.main.IngoreSetterAndGetterPlugin"/>
+
+        <commentGenerator type="com.generator.main.MyCommentGenerator">
+            <property name="author" value="lvshen"/>
+            <property name="allArgsConstructor" value="false"/>
+            <property name="noArgsConstructor" value="false"/>
+            <property name="toString" value="false"/>
+            <property name="builder.toBuilder" value="false"/>
+            <property name="builder" value="false"/>
+        </commentGenerator>
+        <!-- MySQL数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.42.128:3306/demo?characterEncoding=utf-8"
+                        userId="root"
+                        password="root">
+            <property name="useInformationSchema" value="true"></property>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.lvshen.core.entity" targetProject="E:\work\code\test">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <!-- 生成的映射文件包名和位置 -->
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="E:\work\code\test">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lvshen.core.dao" targetProject="E:\work\code\test">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+
+        <table tableName="member" domainObjectName="Member" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+    </context>
+
 </generatorConfiguration>
