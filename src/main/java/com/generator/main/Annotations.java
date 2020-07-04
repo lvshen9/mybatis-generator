@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author TSN
+ * @author lvshen
  * @date 2020/1/20
  */
 public enum Annotations {

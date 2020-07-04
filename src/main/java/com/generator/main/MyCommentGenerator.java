@@ -13,7 +13,7 @@ import java.util.*;
 import static com.generator.main.Constant.*;
 
 /**
- * @author TSN
+ * @author lvshen
  * @date 2019/12/26
  */
 public class MyCommentGenerator extends EmptyCommentGenerator {

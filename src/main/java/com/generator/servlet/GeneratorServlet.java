@@ -40,8 +40,7 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 
 
 /**
- * Created by .JA
- * Company 北京众信金融
+ * Created by lvshen
  */
 public class GeneratorServlet extends HttpServlet {
     /**

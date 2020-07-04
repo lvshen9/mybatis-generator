@@ -10,7 +10,7 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * @author TSN
+ * @author lvshen
  * @date 2019/12/26
  */
 public class EmptyCommentGenerator implements CommentGenerator {
