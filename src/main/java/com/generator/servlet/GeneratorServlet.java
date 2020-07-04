@@ -60,7 +60,8 @@ public class GeneratorServlet extends HttpServlet {
      *
      * @throws ServletException if an error occurs
      */
-    public void init() throws ServletException {
+    @Override
+	public void init() throws ServletException {
         super.init();
     }
 
@@ -73,7 +74,8 @@ public class GeneratorServlet extends HttpServlet {
      * @throws ServletException if an error occurred
      * @throws IOException if an error occurred
      */
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	try {
     		GeneratorParam param = new GeneratorParam();
@@ -155,7 +157,8 @@ public class GeneratorServlet extends HttpServlet {
      * @throws ServletException if an error occurred
      * @throws IOException if an error occurred
      */
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         this.doGet(request, response);
     }
@@ -163,7 +166,8 @@ public class GeneratorServlet extends HttpServlet {
     /**
      * Destruction of the servlet. <br>
      */
-    public void destroy() {
+    @Override
+	public void destroy() {
         super.destroy(); // Just puts "destroy" string in log
     }
     
@@ -212,8 +216,9 @@ public class GeneratorServlet extends HttpServlet {
 				tableConfiguration.setSelectByExampleStatementEnabled(false);
 				tableConfiguration.setUpdateByExampleStatementEnabled(false);
 				//模型是否驼峰命名，为0则为驼峰
-				if(param.getIsHump().equals("0"))
+				if(param.getIsHump().equals("0")) {
 					tableConfiguration.getProperties().setProperty("useActualColumnNames", "true");
+				}
 				tableConfigurations.add(tableConfiguration);
 			}
 		}
@@ -221,8 +226,7 @@ public class GeneratorServlet extends HttpServlet {
     
     /** 
      * 执行压缩操作 
-     * @param srcPathName 被压缩的文件/文件夹 
-     */  
+     */
     public boolean fileToZip(String sourceFilePath, String zipFilePath, String fileName) {    
     	boolean flag = false;
         File file = new File(sourceFilePath);    

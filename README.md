@@ -10,9 +10,9 @@ mybatis文件在线自动生成器-让机械无味的mybatis文件编写工作�
 快来下载试用吧！
 
 
->  本项目为maven项目，力求用最小的容量来实现功能，只使用了JSP和servlet。
+>  本项目为maven项目，力求用最小的容量来实现功能
 
->  mybatis-generator.jar，针对此jar包我们自己做了优化改造，主要改动有：
+
 >  1、优化mybitis配置文件代码结构（空格的缩进、元素与元素之间加空行等 ）。
 >  2、修改namespace的生成规则。
 >  3、修改dao和Entity的命名规则和样式。
